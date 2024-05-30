@@ -1,0 +1,43 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100vh;
+    gap: 10px;
+    border: 4px dotted rgb(0, 0, 0);
+}
+
+.square {
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.square:hover .photo {
+    transform: scale(1.1);
+}
+
+.square:hover .description {
+    opacity: 1;
+}
+
